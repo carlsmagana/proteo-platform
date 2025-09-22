@@ -19,6 +19,9 @@ import { LoginRequest } from '../../models/user.model';
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Business Intelligence Platform
           </h2>
+          <p class="mt-1 text-center text-xs text-gray-500 font-medium">
+            Powered by X-WORLD
+          </p>
           <p class="mt-2 text-center text-sm text-gray-600">
             Inicia sesión en tu cuenta
           </p>
@@ -111,6 +114,11 @@ import { LoginRequest } from '../../models/user.model';
     .text-gray-600 {
       color: #f3f4f6;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    }
+    
+    .text-gray-500 {
+      color: #e5e7eb;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
     }
     
     .text-gray-700 {
