@@ -11,7 +11,7 @@ import { User } from '../../models/user.model';
   template: `
     <div class="min-h-screen bg-gray-50">
       <!-- Header -->
-      <header class="bg-white shadow-sm border-b border-gray-200">
+      <header class="custom-header shadow-sm border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16">
             <div class="flex items-center">
@@ -70,7 +70,31 @@ import { User } from '../../models/user.model';
       </div>
     </div>
   `,
-  styles: []
+  styles: [`
+    .custom-header {
+      background-color: rgb(0, 169, 221);
+    }
+    
+    .custom-header h1 {
+      color: white !important;
+    }
+    
+    .custom-header .text-gray-700 {
+      color: white !important;
+    }
+    
+    .custom-header .text-gray-900 {
+      color: white !important;
+    }
+    
+    .custom-header .font-medium {
+      color: white !important;
+    }
+    
+    .custom-header i {
+      color: white !important;
+    }
+  `]
 })
 export class DashboardComponent implements OnInit {
   currentUser: User | null = null;

@@ -10,7 +10,7 @@ import { RegisterRequest } from '../../models/user.model';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
   template: `
-    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 register-background">
       <div class="max-w-md w-full space-y-8">
         <div>
           <div class="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-blue-100">
@@ -108,7 +108,84 @@ import { RegisterRequest } from '../../models/user.model';
       </div>
     </div>
   `,
-  styles: []
+  styles: [`
+    .register-background {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/cover-home.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+    .max-w-md {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .bg-blue-100 {
+      background-color: rgba(219, 234, 254, 0.8);
+    }
+    
+    .text-gray-900 {
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      font-weight: 700;
+    }
+    
+    .text-gray-600 {
+      color: #f3f4f6;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    }
+    
+    .text-gray-700 {
+      color: #000000;
+      text-shadow: none;
+      font-weight: 500;
+    }
+    
+    label {
+      color: #000000 !important;
+      text-shadow: none !important;
+      font-weight: 500;
+    }
+    
+    .form-input {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    input::placeholder {
+      color: #000000 !important;
+      opacity: 1;
+      text-shadow: none !important;
+    }
+    
+    .placeholder-gray-500::placeholder {
+      color: #000000 !important;
+      opacity: 1;
+      text-shadow: none !important;
+    }
+    
+    input {
+      color: #000000 !important;
+      text-shadow: none !important;
+    }
+    
+    .text-gray-900 {
+      color: #000000 !important;
+      text-shadow: none !important;
+    }
+    
+    .btn-primary {
+      background: rgba(37, 99, 235, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  `]
 })
 export class RegisterComponent {
   userData: RegisterRequest = {
