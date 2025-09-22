@@ -10,31 +10,31 @@ import { RDProject, Innovations, Experiment, RDMetrics } from '../../models/rd.m
   template: `
     <div class="space-y-6">
       <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-gray-900">Investigación y Desarrollo</h2>
+        <h2 class="text-2xl font-bold text-gray-900">Research & Development</h2>
         <div class="flex space-x-2">
           <button
             (click)="activeTab = 'projects'"
             [class]="activeTab === 'projects' ? 'btn-primary' : 'btn-secondary'"
           >
-            Proyectos
+            Projects
           </button>
           <button
             (click)="activeTab = 'innovations'"
             [class]="activeTab === 'innovations' ? 'btn-primary' : 'btn-secondary'"
           >
-            Innovaciones
+            Innovations
           </button>
           <button
             (click)="activeTab = 'experiments'"
             [class]="activeTab === 'experiments' ? 'btn-primary' : 'btn-secondary'"
           >
-            Experimentos
+            Experiments
           </button>
           <button
             (click)="activeTab = 'metrics'"
             [class]="activeTab === 'metrics' ? 'btn-primary' : 'btn-secondary'"
           >
-            Métricas
+            Metrics
           </button>
         </div>
       </div>

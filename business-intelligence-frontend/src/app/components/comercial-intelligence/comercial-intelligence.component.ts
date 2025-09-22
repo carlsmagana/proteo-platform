@@ -10,7 +10,7 @@ import { ComercialDashboard, Report, Analytics } from '../../models/comercial-in
   template: `
     <div class="space-y-6">
       <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-gray-900">Comercial Intelligence</h2>
+        <h2 class="text-2xl font-bold text-gray-900">Commercial Intelligence</h2>
         <div class="flex space-x-2">
           <button
             (click)="activeTab = 'dashboard'"
@@ -22,7 +22,7 @@ import { ComercialDashboard, Report, Analytics } from '../../models/comercial-in
             (click)="activeTab = 'reports'"
             [class]="activeTab === 'reports' ? 'btn-primary' : 'btn-secondary'"
           >
-            Reportes
+            Reports
           </button>
           <button
             (click)="activeTab = 'analytics'"

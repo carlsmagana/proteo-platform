@@ -17,19 +17,19 @@ import { RegisterRequest } from '../../models/user.model';
             <i class="fas fa-user-plus text-blue-600 text-xl"></i>
           </div>
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Crear Nueva Cuenta
+            Create New Account
           </h2>
           <p class="mt-1 text-center text-xs text-gray-500 font-medium">
             Powered by X-WORLD
           </p>
           <p class="mt-2 text-center text-sm text-gray-600">
-            Únete a Business Intelligence Platform
+            Join Business Intelligence Platform
           </p>
         </div>
         <form class="mt-8 space-y-6" (ngSubmit)="onSubmit()">
           <div class="space-y-4">
             <div>
-              <label for="username" class="block text-sm font-medium text-gray-700">Nombre de usuario</label>
+              <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
               <input
                 id="username"
                 name="username"
@@ -37,7 +37,7 @@ import { RegisterRequest } from '../../models/user.model';
                 required
                 [(ngModel)]="userData.username"
                 class="form-input"
-                placeholder="Tu nombre de usuario"
+                placeholder="Your username"
               />
             </div>
             <div>
@@ -49,11 +49,11 @@ import { RegisterRequest } from '../../models/user.model';
                 required
                 [(ngModel)]="userData.email"
                 class="form-input"
-                placeholder="tu@email.com"
+                placeholder="your@email.com"
               />
             </div>
             <div>
-              <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+              <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
               <input
                 id="password"
                 name="password"
@@ -61,11 +61,11 @@ import { RegisterRequest } from '../../models/user.model';
                 required
                 [(ngModel)]="userData.password"
                 class="form-input"
-                placeholder="Mínimo 6 caracteres"
+                placeholder="Minimum 6 characters"
               />
             </div>
             <div>
-              <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar contraseña</label>
+              <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
               <input
                 id="confirmPassword"
                 name="confirmPassword"
@@ -73,7 +73,7 @@ import { RegisterRequest } from '../../models/user.model';
                 required
                 [(ngModel)]="userData.confirmPassword"
                 class="form-input"
-                placeholder="Repite tu contraseña"
+                placeholder="Repeat your password"
               />
             </div>
           </div>
@@ -95,15 +95,15 @@ import { RegisterRequest } from '../../models/user.model';
               <span *ngIf="isLoading" class="mr-2">
                 <i class="fas fa-spinner fa-spin"></i>
               </span>
-              {{ isLoading ? 'Registrando...' : 'Crear Cuenta' }}
+              {{ isLoading ? 'Creating Account...' : 'Create Account' }}
             </button>
           </div>
 
           <div class="text-center">
             <p class="text-sm text-gray-600">
-              ¿Ya tienes una cuenta?
+              Already have an account?
               <a routerLink="/login" class="font-medium text-blue-600 hover:text-blue-500">
-                Inicia sesión aquí
+                Sign in here
               </a>
             </p>
           </div>
@@ -218,17 +218,17 @@ export class RegisterComponent {
 
     // Validaciones
     if (!this.userData.username || !this.userData.email || !this.userData.password || !this.userData.confirmPassword) {
-      this.errorMessage = 'Por favor completa todos los campos';
+      this.errorMessage = 'Please fill in all fields';
       return;
     }
 
     if (this.userData.password !== this.userData.confirmPassword) {
-      this.errorMessage = 'Las contraseñas no coinciden';
+      this.errorMessage = 'Passwords do not match';
       return;
     }
 
     if (this.userData.password.length < 6) {
-      this.errorMessage = 'La contraseña debe tener al menos 6 caracteres';
+      this.errorMessage = 'Password must be at least 6 characters';
       return;
     }
 
@@ -237,14 +237,14 @@ export class RegisterComponent {
     this.authService.register(this.userData).subscribe({
       next: (response) => {
         this.isLoading = false;
-        this.successMessage = 'Cuenta creada exitosamente. Redirigiendo al login...';
+        this.successMessage = 'Account created successfully. Redirecting to login...';
         setTimeout(() => {
           this.router.navigate(['/login']);
         }, 2000);
       },
       error: (error) => {
         this.isLoading = false;
-        this.errorMessage = error.error?.message || 'Error al crear la cuenta';
+        this.errorMessage = error.error?.message || 'Error creating account';
         console.error('Register error:', error);
       }
     });

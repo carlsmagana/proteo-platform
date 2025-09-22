@@ -23,7 +23,7 @@ import { LoginRequest } from '../../models/user.model';
             Powered by X-WORLD
           </p>
           <p class="mt-2 text-center text-sm text-gray-600">
-            Inicia sesión en tu cuenta
+            Sign in to your account
           </p>
         </div>
         <form class="mt-8 space-y-6" (ngSubmit)="onSubmit()">
@@ -37,11 +37,11 @@ import { LoginRequest } from '../../models/user.model';
                 required
                 [(ngModel)]="credentials.email"
                 class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                placeholder="Dirección de email"
+                placeholder="Email address"
               />
             </div>
             <div>
-              <label for="password" class="sr-only">Contraseña</label>
+              <label for="password" class="sr-only">Password</label>
               <input
                 id="password"
                 name="password"
@@ -49,7 +49,7 @@ import { LoginRequest } from '../../models/user.model';
                 required
                 [(ngModel)]="credentials.password"
                 class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                placeholder="Contraseña"
+                placeholder="Password"
               />
             </div>
           </div>
@@ -64,18 +64,18 @@ import { LoginRequest } from '../../models/user.model';
               [disabled]="isLoading"
               class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
             >
-              <span *ngIf="isLoading" class="absolute left-0 inset-y-0 flex items-center pl-3">
+              <span *ngIf="isLoading" class="mr-2">
                 <i class="fas fa-spinner fa-spin"></i>
               </span>
-              {{ isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
+              {{ isLoading ? 'Signing in...' : 'Sign In' }}
             </button>
           </div>
 
           <div class="text-center">
             <p class="text-sm text-gray-600">
-              ¿No tienes una cuenta?
+              Don't have an account?
               <a routerLink="/register" class="font-medium text-blue-600 hover:text-blue-500">
-                Regístrate aquí
+                Sign up here
               </a>
             </p>
           </div>
@@ -183,7 +183,7 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (!this.credentials.email || !this.credentials.password) {
-      this.errorMessage = 'Por favor completa todos los campos';
+      this.errorMessage = 'Please fill in all fields';
       return;
     }
 
@@ -197,7 +197,7 @@ export class LoginComponent {
       },
       error: (error) => {
         this.isLoading = false;
-        this.errorMessage = 'Email o contraseña incorrectos';
+        this.errorMessage = 'Incorrect email or password';
         console.error('Login error:', error);
       }
     });

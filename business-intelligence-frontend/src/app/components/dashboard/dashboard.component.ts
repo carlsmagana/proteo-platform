@@ -24,14 +24,14 @@ import { User } from '../../models/user.model';
             </div>
             <div class="flex items-center space-x-4">
               <div class="text-sm text-gray-700">
-                Bienvenido, <span class="font-medium">{{ currentUser?.username }}</span>
+                Welcome, <span class="font-medium">{{ currentUser?.username }}</span>
               </div>
               <button
                 (click)="logout()"
-                class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 <i class="fas fa-sign-out-alt mr-2"></i>
-                Cerrar Sesión
+                Sign Out
               </button>
             </div>
           </div>
@@ -49,7 +49,7 @@ import { User } from '../../models/user.model';
                 class="sidebar-item"
               >
                 <i class="fas fa-chart-bar w-5 h-5 mr-3"></i>
-                <span>Comercial Intelligence</span>
+                <span>Commercial Intelligence</span>
               </a>
               <a
                 routerLink="/dashboard/rd"
