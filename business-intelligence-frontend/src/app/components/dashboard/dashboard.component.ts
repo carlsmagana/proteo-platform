@@ -28,7 +28,7 @@ import { User } from '../../models/user.model';
               </div>
               <button
                 (click)="logout()"
-                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                class="logout-button inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 <i class="fas fa-sign-out-alt mr-2"></i>
                 Sign Out
@@ -92,6 +92,22 @@ import { User } from '../../models/user.model';
     }
     
     .custom-header i {
+      color: white !important;
+    }
+    
+    .logout-button {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      transition: all 0.2s ease;
+    }
+    
+    .logout-button:hover {
+      background-color: rgba(255, 255, 255, 0.3) !important;
+      color: white !important;
+    }
+    
+    .logout-button i {
       color: white !important;
     }
   `]
